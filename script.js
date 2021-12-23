@@ -3,19 +3,30 @@ let gameOver = false;
 let currentPlayer = 'cross';
 
 function fillTD(id) {
-    if (!fields[id] && !gameOver) { 
-    if (currentPlayer == 'cross') {
-        currentPlayer = 'circle';
-    } else {
-        currentPlayer = 'cross';
+
+    if (!fields[id] && !gameOver) {
+        if (currentPlayer == 'cross') {
+            currentPlayer = 'circle';
+            document.getElementById('player1').classList.remove('player-inactiv');
+            document.getElementById('player2').classList.add('player-inactiv');
+
+        } else {
+            currentPlayer = 'cross';
+
+
+            document.getElementById('player1').classList.add('player-inactiv');
+            document.getElementById('player2').classList.remove('player-inactiv');
+        }
+
+
+        fields[id] = currentPlayer;
+        console.log(fields);
+        draw();
+        checkIfWon();
+
+
     }
 
-
-    fields[id] = currentPlayer;
-    console.log(fields);
-    draw();
-    checkIfWon();
-}
 }
 
 function draw() {
@@ -31,35 +42,78 @@ function draw() {
 
 function checkIfWon() {
     let winner;
-
+    // First Row
     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
-        winner = fields[0]
+        winner = fields[0];
+        document.getElementById('line-1').style.transform = 'scaleX(1)';
     }
     if (fields[3] == fields[4] && fields[4] == fields[5] && fields[3]) {
-        winner = fields[3]
+        winner = fields[3];
+        document.getElementById('line-2').style.transform = 'scaleX(1)';
     }
     if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) {
-        winner = fields[6]
+        winner = fields[6];
+        document.getElementById('line-3').style.transform = 'scaleX(1)';
     }
     if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
-        winner = fields[0]
+        winner = fields[0];
+        document.getElementById('line-4').style.transform = 'rotate(90deg) scaleX(1)';
     }
     if (fields[1] == fields[4] && fields[4] == fields[7] && fields[1]) {
-        winner = fields[1]
+        winner = fields[1];
+        document.getElementById('line-5').style.transform = 'rotate(90deg) scaleX(1)';
     }
-    if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) {
-        winner = fields[6]
+    if (fields[2] == fields[5] && fields[5] == fields[8] && fields[2]) {
+        winner = fields[2];
+        document.getElementById('line-6').style.transform = 'rotate(90deg) scaleX(1)';
     }
     if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
-        winner = fields[2]
+        winner = fields[2];
+        document.getElementById('line-7').style.transform = 'rotate(-45deg) scaleX(1)';
     }
     if (fields[0] == fields[4] && fields[4] == fields[8] && fields[0]) {
-        winner = fields[0]
+        winner = fields[0];
+        document.getElementById('line-8').style.transform = 'rotate(45deg) scaleX(1)';
     }
-if (!!winner) {
+    if (!!winner) {
 
 
-    console.log('gewonnen:', winner)
-    gameOver = true;
+        console.log('gewonnen:', winner)
+        gameOver = true;
+        setTimeout(function () {
+            document.getElementById('gameOver1').classList.remove('d-none');
+            document.getElementById('gameOver2').classList.remove('d-none');
+            document.getElementById('gameOver3').classList.remove('d-none');
+        }, 1500);
+
+    }
 }
+
+function showCurrentPlayer() {
+    if (currentPlayer == 'circle') {
+
+
+    }
+    if (currentPlayer == 'cross') {
+        document.getElementById('player2').classList.add('player-inactiv');
+        document.getElementById('player1').classList.remove('player-inactiv');
+    }
 }
+
+function restartGame() {
+    gameOver = false;
+    fields = [];
+    document.getElementById('gameOver1').classList.add('d-none');
+    document.getElementById('gameOver2').classList.add('d-none');
+    document.getElementById('gameOver3').classList.add('d-none');
+// verhindert beim restarten die Linie wo gewonnen wurde
+    for (let i = 1; i < 8; i++) {
+        document.getElementById('line-' + i).classList.add('d-none');
+    }
+
+    for (let i = 0; i < 9; i++) {
+        document.getElementById('circle-' + i).classList.add('d-none');
+        document.getElementById('cross-' + i).classList.add('d-none');
+    }
+}
+

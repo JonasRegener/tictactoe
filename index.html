@@ -11,6 +11,30 @@
 </head>
 
 <body>
+<img id="gameOver1"class="gameOver1 d-none" src="img/nice.png">
+<img id="gameOver2"class="gameOver2 d-none" src="img/ok.png">
+<button onclick="restartGame()" id="gameOver3"class="restart-btn d-none"> Restart Game! </button>
+    <div class="playerimg-container">
+        <div id="player-solobox2" class="player-solobox"> <img id="player2" class="playerimg " src="img/kreis.png">
+            <h3>Player 1</h3>
+        </div>
+        <div id="player-solobox1" class="player-solobox"> <img class="playerimg player-inactiv" id="player1"
+                src="img/delete.png">
+            <h3> Player 2</h3>
+        </div>
+
+    </div>
+    <div class="relative">
+    <div id="line-1" class="horizontal-line" style="top: 60px;"></div>
+    <div id="line-2" class="horizontal-line" style="top: 204px;"></div>
+    <div id="line-3" class="horizontal-line" style="top: 342px;"></div>
+    
+    <div id="line-5" class="horizontal-line make-vertical" style="top: 211px; left: 27px;"></div>
+    <div id="line-4" class="horizontal-line make-vertical" style="top: 211px; right: 175px;"></div>
+    <div id="line-6" class="horizontal-line make-vertical" style="top: 211px; left: 175px; "></div>
+    <div id="line-7" class="horizontal-line" style="top:170px; transform: scaleX(0);"></div>
+    <div id="line-8" class="horizontal-line" style="top:230px; transform: scaleX(0);"></div>
+
     <table>
         <tr>
             <td onclick="fillTD(0)"> <img id="cross-0" class="positioning d-none" src="./img/delete.png">
@@ -20,32 +44,34 @@
                 <img id="circle-1" class="positioning d-none" src="./img/kreis.png">
             </td>
             <td onclick="fillTD(2)"> <img id="cross-2" class="positioning d-none" src="./img/delete.png">
-                <img id="circle-2"class="positioning d-none" src="./img/kreis.png">
+                <img id="circle-2" class="positioning d-none" src="./img/kreis.png">
             </td>
         </tr>
         <tr>
             <td onclick="fillTD(3)"> <img id="cross-3" class="positioning d-none" src="./img/delete.png">
-                <img id="circle-3"class="positioning d-none" src="./img/kreis.png">
+                <img id="circle-3" class="positioning d-none" src="./img/kreis.png">
             </td>
             <td onclick="fillTD(4)"> <img id="cross-4" class="positioning d-none" src="./img/delete.png">
-                <img id="circle-4"class="positioning d-none" src="./img/kreis.png">
+                <img id="circle-4" class="positioning d-none" src="./img/kreis.png">
             </td>
             <td onclick="fillTD(5)"> <img id="cross-5" class="positioning d-none" src="./img/delete.png">
-                <img id="circle-5"class="positioning d-none" src="./img/kreis.png">
+                <img id="circle-5" class="positioning d-none" src="./img/kreis.png">
             </td>
         </tr>
         <tr>
             <td onclick="fillTD(6)"> <img id="cross-6" class="positioning d-none" src="./img/delete.png">
-                <img id="circle-6"class="positioning d-none" src="./img/kreis.png">
+                <img id="circle-6" class="positioning d-none" src="./img/kreis.png">
             </td>
             <td onclick="fillTD(7)"> <img id="cross-7" class="positioning d-none" src="./img/delete.png">
                 <img id="circle-7" class="positioning d-none" src="./img/kreis.png">
             </td>
-            <td  onclick="fillTD(8)"> <img id="cross-8" class="positioning d-none" src="./img/delete.png">
+            <td onclick="fillTD(8)"> <img id="cross-8" class="positioning d-none" src="./img/delete.png">
                 <img id="circle-8" class="positioning d-none" src="./img/kreis.png">
             </td>
         </tr>
     </table>
+</div>
+    <div class="neededADDS">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 
 </html>

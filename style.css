@@ -52,3 +52,81 @@ tr img {
 .d-none {
     display: none;
 }
+
+.playerimg {
+    height: 100px;
+    
+    
+}
+
+.playerimg-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-inactiv {
+    opacity: 0.5;
+}
+
+.horizontal-line {
+    height: 10px;
+    background-color: rgba(0,0,0,0.4);
+    width: 350px;
+    position: absolute; 
+    z-index: 2;
+    transform: scaleX(0.0); 
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical {
+    transform: rotate(90deg) scaleX(0.0);
+    
+}
+
+.neededADDS
+{
+    position: absolute;
+    bottom: 0;
+}
+
+.gameOver1 {
+    position: absolute;
+height: 60vh;
+background-color: white;
+z-index: 5;
+top: 0;
+}
+
+.gameOver2 {
+    position: absolute;
+    width: 20vw;
+    z-index: 6;
+    right: 0;
+    top: 0;  
+}
+.relative{
+    position: relative;
+}
+
+.restart-btn {
+    border: none;
+    background-color: yellow;
+    position: absolute;
+    bottom: 20vh;
+    border-radius: 100%;
+    height: 76px;
+    font-size: 20px;
+}
+
+.scaleX0 {
+   
+}
